@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.forum.model.User" table="forumuser">
+
+		<id name="userID" column="userID" type="string">
+			<generator class="uuid"></generator>
+		</id>
+
+		<property name="userName"></property>
+		<property name="password"></property>
+		<property name="registerDate"></property>
+		<property name="QQ"></property>
+		<property name="Email"></property>
+		<property name="sex"></property>
+		<property name="userPhoto"></property>
+		<property name="userSignature"></property>
+		<property name="userScore"></property>
+		<property name="userLimit"></property>
+		<!--为了一对多色关联而设 -->
+		<!-- <set name="topics" cascade="all" inverse="true" lazy="false" > 注意原来此处是lazy=true
+			<key column="user_ID"></key>
+			<one-to-many class="com.forum.model.Topic" />
+		</set> -->
+
+	</class>
+
+</hibernate-mapping>

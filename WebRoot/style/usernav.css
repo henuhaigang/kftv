@@ -1,0 +1,120 @@
+#content{
+width:1000px;
+margin:0px auto;
+}
+#content_nav{
+width:1000px;
+background-color:#FF0000;
+font-family:"宋体";
+font-size:20px;
+}
+.nav{
+	margin-top:5px;
+}
+li {
+float: left;
+margin-right: 5px;
+width: 88px;
+height: 1.5em;
+overflow: hidden;
+font-size:14px;
+
+}
+a{
+	text-decoration:none;
+	color: #333;
+	font: 14px/1.5 Tahoma,'Microsoft Yahei','Simsun';
+}
+#content-main{
+	  margin-top:5px;
+}
+.content-button, content-button.a{
+	margin-bottom:5px;
+	background-image: url(../image/button.jpg);
+	width:100px;
+	height:30px;
+	text-align:center;
+	
+}
+#content-new{
+	width:1000px;
+	height:256px;
+	/* //background-color:green; */
+	
+	
+}
+#rank,#newTopic,#notice,#advertise{
+	float:left;
+	width:248px;
+	height:254px;
+	border: 1px solid #A9CBEE;
+	
+}
+
+ h2 {
+margin:0px;
+height: 29px;
+padding: 0 10px;
+border-bottom: 1px solid white;
+font-size: 14px;
+line-height: 29px;
+background: #EEF4FA;
+
+}
+
+.listhot,.newTopic{
+	margin:0px;
+}
+.listhot ul{
+	margin-top:0px;
+}
+.listhot li{
+float: left;
+padding-top:0px;
+padding-left:0px;
+width: 200px;
+height: 1.5em;
+overflow: hidden;
+font-size:14px;
+list-style:none;
+}
+.listnum{
+	float:left;
+	
+	overflow:none;
+}
+.top3{
+	background-color:red;
+	width:10px;
+	font-size:14px;
+}
+
+.listnum li{
+	height: 1.5em;
+}
+
+.clicknum{
+	float:right;
+	
+}
+ .newTopic li{
+float: left;
+padding-top:0px;
+width: 200px;
+height: 1.5em;
+overflow: hidden;
+font-size:14px;
+list-style:none;
+}
+.listNotice ul li{
+float: left;
+/* padding-top:0px; */
+padding:0px;
+margin:0px,auto;
+width: 200px;
+height: 1.5em;
+overflow: hidden;
+font-size:14px;
+list-style:none;
+text-align: -webkit-match-parent;
+}

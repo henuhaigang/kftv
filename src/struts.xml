@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	
+
+	<package name="kftv" extends="struts-default">
+		<!--显示用户列表 -->
+		<action name="registerUser" class="com.forum.action.UserAction"
+			method="registerUser">
+
+			<result name="success">/user/userindex.jsp</result>
+
+		</action>
+		<action name="publishTopic" class="com.forum.action.TopicAction"
+			method="publishTopic"> 
+
+			<result name="success">/topic/topiclist.jsp</result>
+
+		</action>
+
+		<!--显示帖子列表 -->
+		<action name="showTopic" class="com.forum.action.TopicAction"
+			method="showTopic">
+
+			<result name="success">/topic/topiclist.jsp</result>
+
+		</action>
+		<action name="publichSwitch" class="com.forum.action.TopicAction"
+			method="publichSwitch">
+
+			<result name="success">/topic/publishTopic.jsp</result>
+
+		</action>
+
+		<!--显示每个帖子的内容 -->
+		<action name="getSingleTopic" class="com.forum.action.TopicAction"
+			method="getSingleTopic">
+
+			<result name="success">/topic/topic.jsp</result>
+
+		</action>
+		<action name="getMySingleTopic" class="com.forum.action.TopicAction"
+			method="getMySingleTopic">
+
+			<result name="success">/topic/mySingleTopic.jsp</result>
+
+		</action>
+		<!--管理员登录 -->
+		<action name="adminLogin" class="com.forum.action.UserAction"
+			method="adminLogin">
+			<result name="success">/index.jsp</result>
+			<result name="usersuccess">/user/userindex.jsp</result>
+			<result name="error">/error.jsp</result>
+
+		</action>
+		<!--普通用户登录 -->
+		<action name="userLogin" class="com.forum.action.UserAction"
+			method="userLogin">
+
+			<!--  <result name="usersuccess">/user/userindex.jsp</result>  -->
+			 <result name="usersuccess" type="chain">achieveSection</result> 
+			
+			<result name="error">/error.jsp</result>
+			<!--删除用户 -->
+		</action>
+		<action name="deleteUser" class="com.forum.action.UserAction"
+			method="deleteUser">
+			<result name="success">/listAll.jsp</result>
+		</action>
+		<!-- 得到单个用户 -->
+		<action name="getSingleUser" class="com.forum.action.UserAction"
+			method="getSingleUser">
+			<result name="success">/user/updateUser.jsp</result>
+		</action>
+
+		<!-- 得到所有用户 -->
+		<action name="listAllUsers" class="com.forum.action.UserAction"
+			method="listAllUsers">
+			<result name="success">/listAll.jsp</result>
+		</action>
+
+
+
+		<!--更新用户 -->
+		<action name="updateUser" class="com.forum.action.UserAction"
+			method="updateUser">
+			<result name="success">/listAll.jsp</result>
+		</action>
+		<!-- 插入回帖 -->
+
+		<action name="replyTopic" class="com.forum.action.ReplyTopicAction"
+			method="replyTopic">
+
+			<result name="success">/topic/topic.jsp</result>
+
+            <result name="error">user/userLogin.jsp</result>
+		</action>
+
+		<!-- <action name="showMyTopic" class="com.forum.action.UserAction"
+			method="showMyTopic">
+
+			<result name="success">/topic/myTopic.jsp</result>
+
+		</action> -->
+      <!-- 得到自己的帖子列表 -->
+       <action name="showMyTopic" class="com.forum.action.TopicAction"
+			method="showMyTopic">
+
+			<result name="success">/topic/myTopic.jsp</result>
+
+		</action>
+		<!-- 分页 -->
+		 <action name="pageSort" class="com.forum.action.SortPage"
+			method="pageSort">
+
+			<result name="success">/topic/myTopic.jsp</result>
+
+		</action>
+		
+		<action name="allPageSort" class="com.forum.action.SortPage"
+			method="allPageSort">
+
+			<result name="success">/topic/topiclist.jsp</result>
+
+		</action>
+         <!-- 删除帖子 -->
+		<action name="removeTopic" class="com.forum.action.TopicAction"
+			method="removeTopic">
+
+			<result name="success">/topic/myTopic.jsp</result>
+		</action>
+		<!-- 得到板块号 -->
+		<action name="achieveSection" class="com.forum.action.SectionAction"
+			method="achieveSection">
+			<result name="success">/user/usernav.jsp</result>
+		</action>
+ 
+ <action name="achieveIndex" class="com.forum.action.SectionAction"
+			method="achieveIndex">
+			<result name="success">/user/userindex.jsp</result>
+		</action>
+ 
+ 
+		<action name="selclas" class="com.forum.action.SectionAction"
+			method="selclas">
+			<result name="success">/topic/childrenTopic.jsp</result>
+		</action>
+		<action name="childrenPageSort" class="com.forum.action.SortPage"
+			method="childrenPageSort">
+			<result name="success">/topic/childrenTopic.jsp</result>
+		</action>
+		
+		<!-- 得到发帖人的信息 -->
+		<action name="getAuthorInfo" class="com.forum.action.AuthorInfoAction"
+			method="getAuthorInfo">
+			<result name="success">/user/listAuthorInfo.jsp</result>
+			<result name="error">/user/userLogin.jsp</result>
+		</action>
+		
+		<action name="getAuthorSingleTopic" class="com.forum.action.TopicAction"
+			method="getAuthorSingleTopic">
+			<result name="success">/topic/authorTopic.jsp</result>
+			<result name="error">/user/userLogin.jsp</result>
+		</action>
+		
+		
+		<action name="search" class="com.forum.action.AuthorInfoAction"
+			method="search">
+			<result name="success">/topic/searchResult.jsp</result>
+			<result name="searchSuccess">/user/searchuser.jsp</result>
+			<result name="error">/user/userLogin.jsp</result>
+		</action>
+	<!-- 	
+		<action name="getAuthorInfo" class="com.forum.action.MessageAction"
+			method="leaveMessage">
+			<result name="success">/user/listAuthorInfo.jsp</result>
+		</action> -->
+	</package>
+
+
+	<!--json验证 -->
+	<package name="strutsjson" extends="json-default">
+		<action name="checkUserExsit" class="com.forum.action.UserAction"
+			method="checkUserExsit">
+			<result name="success" type="json">/reister.jsp </result>
+		</action>
+	</package>
+
+</struts>

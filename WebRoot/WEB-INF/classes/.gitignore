@@ -1,0 +1,10 @@
+/Message.hbm.xml
+/Notice.hbm.xml
+/Reply.hbm.xml
+/Section.hbm.xml
+/Topic.hbm.xml
+/User.hbm.xml
+/com/
+/hibernate.cfg.xml
+/struts.xml
+/ueditor/
